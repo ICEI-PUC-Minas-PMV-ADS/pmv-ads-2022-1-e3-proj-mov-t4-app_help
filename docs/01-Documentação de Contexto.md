@@ -25,20 +25,3 @@ Levando em consideração os fatores mencionados, torna-se necessário o desenvo
 ## Público-Alvo
 
 Embora todas as pessoas possam se beneficiar da solução proposta, o foco da aplicação mobile está nos condutores que têm o hábito, seja por lazer ou a trabalho, de se locomoverem utilizando seus véiculos ou de terceiros. Desta forma, estabeleceu-se como público-alvo desta solução, homens e mulheres entre 18 e 50 anos que demandam frequente atualização, habituados com o uso de computadores e dispositivos móveis e que demandam prestação de serviços mecânicos, orientação durante o trajeto e retarguarda de apoio.
-
-
-## Personas
-
-As personas levantadas durante o processo de entendimento do problema são apresentadas nas figuras que se seguem.
-
-![Exemplo de Flluxo de Código](img/persona1.jpeg)
-
-![Exemplo de Flluxo de Código](img/persona2.jpeg)
-
-![Exemplo de Flluxo de Código](img/persona3.jpeg)
-
-![Exemplo de Flluxo de Código](img/persona4.jpeg)
-
-![Exemplo de Flluxo de Código](img/persona5.jpeg)
-
-
