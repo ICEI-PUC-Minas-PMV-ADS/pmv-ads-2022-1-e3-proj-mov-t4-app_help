@@ -1,4 +1,3 @@
-
 # Especificações do Projeto
 
 Levando em consideração os fatores mencionados, torna-se necessário o desenvolvimento de uma aplicação que possa trazer comodidade e segurança para o condutor, construindo uma ferramenta que possa auxiliar na resolução de situações atípicas envolvendo o veículo e no cenário atual torna-se viável, pois além de ajudar o condutor, a aplicação estará contribuindo para o prestador angariar clientes e consequentemente ter um retorno financeiro. Atentando-se às necessidades dos condutores, o fator segurança também se destaca como uma das justificativas que corrobora com o intuito da aplicação.
