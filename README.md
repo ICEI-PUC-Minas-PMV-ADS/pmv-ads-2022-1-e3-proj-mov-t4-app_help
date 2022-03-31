@@ -1,25 +1,33 @@
-# TÍTULO DO PROJETO
+# APP HELP
 
-`CURSO`
+Analise e desenvolvimento de sistemas
 
-`DISCIPLINA`
+Aplicaçao mobile
 
-`SEMESTRE`
+Terceiro Semestre
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Apresenta-se a ideia de criar uma aplicação mobile com o propósito de auxiliar o condutor a solucionar os problemas que podem vir a acontecer de forma simples, objetiva e segura, baseando-se na ligação direta com um prestador ou serviço desejado alem de sugerir locais próximos relacionados ao ocorrido oferecendo suporte ao usuário e garantindo uma solução. 
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Alessandra Miria De Oliveira Ramos
+* Alex Costa Pereira
+* Gerald Gabriel dos Santos
+* Geovanne Vinícius Lacerda Gomes
+* Rafael Augusto Domingos Batista
+* Rafael Batista Silva Ribeiro
+
 
 ## Orientador
 
-* Nome completo do professor 1
+* Matheus Curcino de Lima
 
 ## Instruções de utilização
+
+* Api propria em C#
+* React Native
+* Banco e dados
+
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
 
