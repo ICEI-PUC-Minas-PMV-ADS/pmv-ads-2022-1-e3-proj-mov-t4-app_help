@@ -42,7 +42,7 @@ Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum 
 
 O processo escolhio para utilizaçao será basic. Escolha Básico quando sua equipe quiser o modelo mais simples que usa Problemas, Tarefas e Epics para acompanhar o trabalho. 
  
-![Azure](img/Basic.jpeg)
+![Azure](img/Basic.png)
 
 
 ### Ferramentas
