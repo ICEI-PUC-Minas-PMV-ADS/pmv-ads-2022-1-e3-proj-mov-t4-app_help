@@ -13,7 +13,7 @@ Apresenta-se a ideia de criar uma aplicação mobile com o propósito de auxilia
 * Alessandra Miria De Oliveira Ramos
 * Alex Costa Pereira
 * Gerald Gabriel dos Santos
-* Geovanne Vinícius Lacerda Gomes
+* Geovane Vinicius Lacerda Gomes
 * Rafael Augusto Domingos Batista
 * Rafael Batista Silva Ribeiro
 
