@@ -83,3 +83,19 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 Diagrama
 
 ![Diagrama de casos de uso](img/DiagramaCasoseUso.jpeg)
+
+Diagrama de Processos de Negócio BPMN
+
+![Diagrama de Processos](img/padrao.png)
+
+Matriz de rastreabilidade
+
+![Diagrama de Processos](img/matriz.png)
+
+Indicadores de Desempenho
+
+![Diagrama de Processos](img/indicadores.png)
+
+
+
+
