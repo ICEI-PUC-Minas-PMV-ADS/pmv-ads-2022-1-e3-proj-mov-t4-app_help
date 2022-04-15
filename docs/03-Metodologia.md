@@ -34,7 +34,7 @@ O projeto segue a seguinte convenção para o nome de branches:
 ### Divisão de Papéis
 
 Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Gerald Gabriel;
+- Scrum Master: Alessandra Miria, Gerald Gabriel;
 - Equipe de Desenvolvimento: Alex Costa, Rafael Silva, Rafael Augusto,Gerald Gabriel, Geovanne Vinícius;
 - Equipe de Design: Alessandra Miria.
 - 
