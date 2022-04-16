@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Pessoal\teste\pmv-ads-2021-2-e2-proj-int-t2-app-help-master\pmv-ads-2021-2-e2-proj-int-t2-app-help-master\back-end\help-car\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-04-05T00:24:23.6989170Z;True|2022-04-04T21:18:00.6991338-03:00;True|2022-04-04T21:12:41.1638206-03:00;True|2022-04-04T20:07:05.2176846-03:00;True|2022-04-04T19:13:21.7769433-03:00;True|2022-04-04T18:49:48.0128581-03:00;True|2022-03-31T22:50:21.6698789-03:00;True|2022-03-31T22:39:38.2179446-03:00;</History>
+  </PropertyGroup>
+</Project>
