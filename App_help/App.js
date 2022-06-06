@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Image, Text, ImageBackground} from 'react-native';
 import Routes from './src/routes'
 import { NavigationContainer } from '@react-navigation/native';
+import Home from './src/conponents/Home';
+import ListService from './src/conponents/ListService';
 
 
 export default function App() {
@@ -10,6 +12,7 @@ export default function App() {
       <StatusBar backgroundColor='#FDA060' barStyle="light-content"/>
       <Routes/>
     </NavigationContainer>
+    
   );
 }
 

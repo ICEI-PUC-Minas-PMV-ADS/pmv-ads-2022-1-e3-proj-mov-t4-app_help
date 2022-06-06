@@ -4,7 +4,7 @@ import { Alert } from "react-native-web"
 import * as AxiosLogger from 'axios-logger';
 import Config from "./Config"
 
-class UsuarioService{
+class PrestadorService{
 
     async cadastrar(data){
         const instance = axios.create();
@@ -13,7 +13,7 @@ class UsuarioService{
         instance.interceptors.request.use(AxiosLogger.requestLogger, AxiosLogger.errorLogger);
         instance.interceptors.response.use(AxiosLogger.responseLogger, AxiosLogger.errorLogger);
         return instance({
-            url: Config.API_URL + "Usuarios",
+            url: Config.API_URL + "Prestador",
             method: "POST",
             timeout: Config.TIMEOUT_REQUEST,
             data: data,
@@ -26,14 +26,14 @@ class UsuarioService{
         })
     }
 
-    async editar(data){
+    async editar(data,id){
         const instance = axios.create();
         instance.interceptors.request.use(AxiosLogger.requestLogger);
         
         instance.interceptors.request.use(AxiosLogger.requestLogger, AxiosLogger.errorLogger);
         instance.interceptors.response.use(AxiosLogger.responseLogger, AxiosLogger.errorLogger);
         return instance({
-            url: Config.API_URL + "Usuarios/" + data.id ,
+            url: Config.API_URL + "Prestador/" + id ,
             method: "PUT",
             timeout: Config.TIMEOUT_REQUEST,
             data: data,
@@ -45,15 +45,36 @@ class UsuarioService{
             return Promise.reject(error)
         })
     }
+
     async get(id){
-    
+   
         const instance = axios.create();
         instance.interceptors.request.use(AxiosLogger.requestLogger);
         
         instance.interceptors.request.use(AxiosLogger.requestLogger, AxiosLogger.errorLogger);
         instance.interceptors.response.use(AxiosLogger.responseLogger, AxiosLogger.errorLogger);
         return instance({
-            url: Config.API_URL + "Usuarios/" + id,
+            url: Config.API_URL + "Prestador/" + id,
+            method: "GET",
+            timeout: Config.TIMEOUT_REQUEST,
+            headers: Config.HEADER_REQUEST
+        }).then((response) => {
+            
+            return Promise.resolve(response)
+        }).catch((error) => {
+            console.log(error)
+            return Promise.reject(error)
+        })
+    }
+    async findAll(id){
+       
+        const instance = axios.create();
+        // instance.interceptors.request.use(AxiosLogger.requestLogger);
+        
+        // instance.interceptors.request.use(AxiosLogger.requestLogger, AxiosLogger.errorLogger);
+        // instance.interceptors.response.use(AxiosLogger.responseLogger, AxiosLogger.errorLogger);
+        return instance({
+            url: Config.API_URL + "Prestador",
             method: "GET",
             timeout: Config.TIMEOUT_REQUEST,
             headers: Config.HEADER_REQUEST
@@ -66,20 +87,7 @@ class UsuarioService{
         })
     }
  
-    // async function signIn(data) {
-    //     if (username.length === 0) return
-    
-    //     setLoading(true)
-    
-    //     try {
-    
-    //       const credentials = {
-    //         email: username,
-    //         password: password
-    //       }
-    // }
 }
 
-
-const usuarioService = new UsuarioService()
-export default usuarioService
+const prestadorService = new PrestadorService()
+export default prestadorService

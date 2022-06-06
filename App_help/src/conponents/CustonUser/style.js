@@ -8,17 +8,18 @@ const styles = StyleSheet.create({
         alignItems:"center",
     },
     containerForm: {
+        flex:20,
         backgroundColor:"#FFF",
         borderRadius:20,
-        width:400,
-        height:540,
+        paddingStart: '5%',
+        paddingEnd:'5%',
     },
     Text: {
         fontSize:40,
         fontWeight:'bold',
         marginLeft:15,
-        marginTop:30,
         lineHeight:38,
+        textAlign:"center",
     },
     textInput: {
         width:350,
@@ -35,21 +36,10 @@ const styles = StyleSheet.create({
         color:'#FFF',
         fontSize:20,
         textAlign:'center',
-        marginTop:20,
+        marginTop:10,
+        textAlignVertical:"center",
+        marginBottom:20
     },
-    select: { 
-        height: 50, 
-        width: 350,
-        marginBottom:20,
-        borderRadius:10,
-    },Imagem: {
-        height: 50, 
-        width: 50,
-        borderRadius:30,
-        marginLeft:276,
-        marginTop:30,
-
-    }
 })
 
 export default styles

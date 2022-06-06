@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
     },
     containerForm: {
-        flex:7,
+        flex:20,
         backgroundColor:"#FFF",
         borderRadius:20,
         paddingStart: '5%',
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     Text: {
         fontSize:40,
         fontWeight:'bold',
-        marginLeft:15,
+        marginLeft:5,
         lineHeight:38,
         textAlign:"center",
     },
@@ -41,7 +41,14 @@ const styles = StyleSheet.create({
         fontSize:20,
         textAlign:'center',
         marginTop:18,
-        textAlignVertical:"center"
+        textAlignVertical:"center",
+        marginBottom:15
+    },
+    select: { 
+        height: 50, 
+        width: 350,
+        marginBottom:20,
+        borderRadius:10,
     },
 })
 

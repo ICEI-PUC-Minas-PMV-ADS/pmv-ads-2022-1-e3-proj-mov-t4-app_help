@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Button, Text,Image,TouchableOpacity , TextInput, ScrollView, Alert, Picker} from "react-native";
+import { Appbar, Colors } from 'react-native-paper'
 import style from "./style.js";
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
@@ -7,14 +8,10 @@ import { TextInputMask } from "react-native-masked-text";
 import { useState } from "react";
 import usuarioService from '../../Services/UsuarioService';
 import * as Yup from 'yup';
-import moment from 'moment';
 
-import prestadorService from "../../Services/PrestadorService.js";
-
-export default function Title({ route }){
-
+export default function Title(){
     const navigation = useNavigation();
-    const id = route.params.id
+    const [cell, setCell] = useState('');
     const [email, setEmail] = useState('');
     const [nome, setNome] = useState('');
     const [cpf, setCpf] = useState('');
@@ -28,27 +25,9 @@ export default function Title({ route }){
     const [estado, setEstado] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
     
-
-
-    if (id !=0 ){
-        if (!nome){
-            usuarioService.get(id).then(x=>{
-                setNome(x.data.nome)
-                setCpf(x.data.cpf)
-                setDataNascimento( moment(x.data.data_nascimento).format("DD/MM/YYYY"))
-                setEmail(x.data.email)  
-                setSenha(x.data.senha)
-                setEndereco(x.data.endereco)
-                setNumero(x.data.numero)
-                setBairro(x.data.bairro)
-                setCidade(x.data.cidade)
-                setEstado(x.data.estado)
-                })
-        }
-    
-  
-}
- 
+    function Navegacao(){
+        navigation.navigate("Inicio")
+      }
     
     function formartDate(date){
         darr = date.split("/");   
@@ -57,16 +36,18 @@ export default function Title({ route }){
 
     async function handleSendForm(){
         try{
-            console.log("handle")
          const schema = Yup.object().shape({
+          nome: Yup.string().required("Preencha seu E-mail"),
            email: Yup.string().email("Email com formato inválido").required("Preencha seu E-mail"),
            senha: Yup.string().required("Preencha sua Senha"),
+           cell: Yup.string().required("Preencha sua Celular"),
            nome: Yup.string().required("Preencha seu Nome"),
            cpf: Yup.string().required("Preencha seu CPF"),
            data_nascimento: Yup.string().required("Preencha seu Data de Nascimento"),
+           chassi: Yup.string().required("Preencha seu Chassi"),
            endereco: Yup.string().required("Preencha seu endereco"),
          })
-         await schema.validate({email, senha, nome, cpf, data_nascimento,  endereco})
+         await schema.validate({nome,email, senha, cell, nome, cpf, data_nascimento, chassi, endereco})
          salvar()
        }catch(error){
          if(error instanceof Yup.ValidationError){
@@ -77,12 +58,12 @@ export default function Title({ route }){
 
        const salvar = () => {
           let data = {
-            id:id,
             nome: nome,
             cpf: cpf,
             data_nascimento: formartDate(data_nascimento),
             email: email,
             senha: senha,
+            chassi: chassi,
             endereco: endereco,
             numero: numero,
             bairro: bairro,
@@ -90,30 +71,32 @@ export default function Title({ route }){
             estado: estado,        
           }
 
-          console.log("salvar")
+          console.log("salvar") 
+          usuarioService.cadastrar(data)
+          .then((response) => {
+       
+       
+            Alert.alert("Salvo com sucesso")
+            //Alert.alert(response.data.mensagem)
+          
+          })
+          .catch((error) => {
+            console.error(error)
+            Alert.alert("Erro", "Houve um erro inesperado")
+          })
 
-          if (id==0){
-            usuarioService.cadastrar(data).then(x=>{
-                Alert.alert("Cadastro com sucesso")
-            })
-         }else{
-            usuarioService.editar(data,id).then(x=>{
-                 Alert.alert("Editado com sucesso")
-                 navigation.navigate("Inicio")
-             }) 
-         }
-
-     
-        
       }
 
     return(
     
         <View style={style.container}> 
+            <Appbar.Header style={{backgroundColor:"#FDA060"}} >
+            <Appbar.BackAction onPress={Navegacao}  />
+            </Appbar.Header>
             <View style={style.container}></View>
-            <Animatable.Text animation="fadeInLeft" delay={600} style={style.Text}>Registre</Animatable.Text>
+            <Animatable.Text animation="fadeInLeft" delay={600} style={style.Text}>Deseja realizar alguma alteração ?</Animatable.Text>
             <Animatable.View  animation="fadeInUp" delay={300} style={style.containerForm}>
-                <ScrollView style={{marginTop:5}}>
+                <ScrollView style={{marginTop:2}}>
                     <TextInput
                         style={style.textInput}
                         onChangeText={text => setNome(text) }
@@ -137,7 +120,12 @@ export default function Title({ route }){
                         value={cpf}
                         onChangeText={text => setCpf(text)}
                     />
-        
+                    <TextInput
+                        style={style.textInput}
+                        onChangeText={text => setChassi(text) }
+                        value={chassi}
+                        placeholder="   Chassi"
+                    />
                     <TextInput
                         style={style.textInput}
                         onChangeText={text => setEmail(text) }
@@ -152,7 +140,18 @@ export default function Title({ route }){
                         placeholder="   Senha"
                         secureTextEntry={true}
                     />
-            
+                    <TextInputMask
+                        style={style.textInput}
+                        type={'cel-phone'}
+                        placeholder={"  Celular"}
+                        options={{
+                            maskType: 'BRL',
+                            withDDD: true,
+                            dddMask: '(99) '
+                        }}
+                        value={cell}
+                        onChangeText={ text => setCell(text) }
+                    />
                     <TextInput
                         style={style.textInput}
                         value={endereco}
@@ -184,12 +183,10 @@ export default function Title({ route }){
                         value={estado}
                         placeholder="   Estado"
                     />
-
-           
                 </ScrollView>
                 <View>
                     <TouchableOpacity>
-                        <Text style={style.button} onPress={salvar} >Cadastrar</Text>
+                        <Text style={style.button} onPress={handleSendForm} >Realizar alteração</Text>
                     </TouchableOpacity>
                 </View>
             </Animatable.View>
