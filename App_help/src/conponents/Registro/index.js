@@ -111,7 +111,7 @@ export default function Title({ route }){
     
         <View style={style.container}> 
             <View style={style.container}></View>
-            <Animatable.Text animation="fadeInLeft" delay={600} style={style.Text}>Registre</Animatable.Text>
+            <Animatable.Text animation="fadeInLeft" delay={600} style={style.Text}>Usuario</Animatable.Text>
             <Animatable.View  animation="fadeInUp" delay={300} style={style.containerForm}>
                 <ScrollView style={{marginTop:5}}>
                     <TextInput

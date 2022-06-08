@@ -12,6 +12,7 @@ import dbSQLite from "../../Services/database.js";
 export default function Inicio(){
     const navigation = useNavigation();
     
+    
     function Navegacao(){
         dbSQLite.findUsuario().then(x=>{
   
@@ -35,7 +36,7 @@ export default function Inicio(){
             <View>
                 <TouchableOpacity activeOpacity={0.5}  onPress={Navegacao}>
                     <Image
-                    source={require('../../../assets/Img/perfil.png')}
+                    source={require('../../../assets/Img/user-profile.jpg')}
                     style={style.Imagem}  
                     />
                 </TouchableOpacity>

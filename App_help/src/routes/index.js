@@ -1,13 +1,13 @@
 
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CustonDrawer from '../conponents/CustonDrawer'
 import Home from '../conponents/Home';
 import Login from '../conponents/Login';
 import Registro from '../conponents/Registro';
 import Servico from '../conponents/Servico';
 import Inicio from '../conponents/Inicio';
 import ListService from '../conponents/ListService';
-import UserList from '../conponents/UserList';
 import ServicePrestador from '../conponents/ServicePrestador';
 import CustonUser from '../conponents/CustonUser';
 import { Button, Icon, Tab } from 'react-native-elements';
@@ -23,19 +23,13 @@ let tipo = false;
      dbSQLite.findUsuario().then(x=>{
   
 
-       tipo = x["_array"][0]["tipo"] == "usuario"
-       console.log("find")
-       console.log(tipo)
-     
+      tipo = x["_array"][0]["tipo"] == "usuario"
+      
+
     })
 
-  
-  
-   console.log("teste")
-   console.log(tipo)
-
   return (
-    <Drawer.Navigator screenOptions={{
+    <Drawer.Navigator drawerContent={props => <CustonDrawer {...props}/>} screenOptions={{
       headerTintColor: '#FFF',
       drawerActiveTintColor: '#FDA060',
       headerStyle: {
@@ -45,11 +39,6 @@ let tipo = false;
       <Drawer.Screen name="Inicio" component={Inicio} />
       <Drawer.Screen name="ListService" component={ListService} />
       <Drawer.Screen name="Usuario" component={CustonUser} />
-      <Drawer.Screen name="Registrar" component={Registro}    options={{
-     drawerItemStyle: {
-       display: tipo ? "flex" : "none",
-     },
-   }}/>
       <Drawer.Screen name="ServicePrestador" component={ServicePrestador} />
     </Drawer.Navigator>
   );
@@ -104,12 +93,6 @@ export default function Routes() {
         <Stack.Screen
           name="Inicio"
           component={MyDrawer}
-          options={{ headerShown: false }}
-        />
-
-        <Stack.Screen
-          name="UserList"
-          component={UserList}
           options={{ headerShown: false }}
         />
 
